@@ -10,9 +10,79 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    teste
+    <header>
+      <nav>
+        <h1>DsViaCep</h1>
+        <div>Contato</div>
+      </nav>
+    </header>
+    <main>
+      <section id="form-section">
+        <div id="card-pricipal">
+          <form name="newAddress">
+            <div>
+              <label for="cep"
+                >Cep:
+                <input type="text" name="cep" id="cep" placeholder="Cep" />
+              </label>
+            </div>
+            <div>
+              <label for="street"
+                >Logradouro:
+                <input
+                  type="text"
+                  name="street"
+                  id="street"
+                  placeholder="Logradouro"
+                />
+              </label>
+            </div>
+            <div>
+              <label for="number"
+                >Numero:
+                <input
+                  type="text"
+                  name="number"
+                  id="number"
+                  placeholder="Numero"
+                />
+              </label>
+            </div>
+            <div>
+              <label for="cep"
+                >Cidade:
+                <input
+                  type="text"
+                  name="cidade"
+                  id="cidade"
+                  placeholder="Cidade"
+                />
+              </label>
+            </div>
+            <div>
+                <button type="submit">Salvar</button>
+            </div>
+            <div>
+                <button>Limpar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section id="list-section">
+        <div>
+          <h3>São Paulo</h3>
+          <p>Rua dos Jardins, 720</p>
+          <p>11200-345</p>
+        </div>
+        <div>
+          <h3>São Paulo</h3>
+          <p>Rua dos Jardins, 720</p>
+          <p>11200-345</p>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
