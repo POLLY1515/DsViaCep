@@ -20,53 +20,58 @@
       </nav>
     </header>
     <main>
-      <section id="form-section">
-        <div id="card-pricipal">
+      <section id="form-section" class="form-container">
+        <div class="card-form">
           <form name="newAddress">
-            <div>
-              <label for="cep"
-                >Cep:
-                <input type="text" name="cep" id="cep" placeholder="Cep" />
-              </label>
+            <div class="form-control">
+              <label for="cep">Cep:</label>
+              <input
+                type="text"
+                name="cep"
+                id="cep"
+                class="form-input"
+                placeholder="Cep"
+              />
+              <div class="error-message">Campo requerido</div>
+            </div>
+            <div class="form-control">
+              <label for="street">Logradouro:</label>
+              <input
+                type="text"
+                name="street"
+                id="street"
+                class="form-input"
+                placeholder="Logradouro"
+                disabled
+              />
+            </div>
+            <div class="form-control">
+              <label for="number">Numero:</label>
+              <input
+                type="text"
+                name="number"
+                id="number"
+                class="form-input"
+                placeholder="Numero"
+              />
+            </div>
+            <div class="form-control">
+              <label for="cidade">Cidade:</label>
+              <input
+                type="text"
+                name="cidade"
+                id="cidade"
+                class="form-input"
+                placeholder="Cidade"
+                disabled
+              />
+              <div class="error-message">Campo requerido</div>
             </div>
             <div>
-              <label for="street"
-                >Logradouro:
-                <input
-                  type="text"
-                  name="street"
-                  id="street"
-                  placeholder="Logradouro"
-                />
-              </label>
+              <button type="submit">Salvar</button>
             </div>
             <div>
-              <label for="number"
-                >Numero:
-                <input
-                  type="text"
-                  name="number"
-                  id="number"
-                  placeholder="Numero"
-                />
-              </label>
-            </div>
-            <div>
-              <label for="cep"
-                >Cidade:
-                <input
-                  type="text"
-                  name="cidade"
-                  id="cidade"
-                  placeholder="Cidade"
-                />
-              </label>
-            </div>
-            <div>
-                <button type="submit">Salvar</button>
-            </div>
-            <div>
-                <button>Limpar</button>
+              <button>Limpar</button>
             </div>
           </form>
         </div>
