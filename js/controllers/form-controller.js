@@ -1,5 +1,9 @@
+import Address from '../models/address.js'
 
 function State(){
+
+    this.Address = new Address();
+
     this.btnSave = null
     this.btnClear = null
 
@@ -26,10 +30,28 @@ export function init(){
     state.btnSave = document.forms.newAddress.btnSave
     state.btnClear = document.forms.newAddress.btnClear
 
-    state.errorCep = document.querySelector('[data-error="cep"]')//selecionando o elemento que
-    //tem esse atributo
+    state.errorCep = document.querySelector('[data-error="cep"]')
     state.errorNumber = document.querySelector('[data-error="numnber"]')
 
+    state.inputNumber.addEventListener('change', handleInputNumberChange)
 
-    console.log(state)
-}
+}//fim init
+
+    
+
+    function handleInputNumberChange(event){
+        if(event.target.value == ""){
+        setFormError("number","campo requerido");
+    }else{
+        setFormError("number","");
+
+    }
+    }//fim funcao  handleInputNumberChange
+    
+
+
+    function setFormError(key,value){
+        const element = document.querySelector(`[data-error="${key}"]`);
+        element.innerHTML = value;
+    }
+
