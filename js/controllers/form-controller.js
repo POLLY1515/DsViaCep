@@ -35,6 +35,8 @@ export function init(){
 
     state.inputNumber.addEventListener('change', handleInputNumberChange)
 
+    state.btnClear.addEventListener('click',clearForm)
+
 }//fim init
 
     
@@ -48,6 +50,24 @@ export function init(){
     }
     }//fim funcao  handleInputNumberChange
     
+    function handleBtnClearClick(event){
+        event.preventDefault();//para barrar o evio do formulario
+        clearForm();
+    }
+
+    //funcao para limpar o formulario
+    function clearForm(){
+        state.inputCep.value = "";
+        state.inputCity.value = "";
+        state.inputNumber.value = "";
+        state.inputStreet.value = "";
+
+        setFormError("cep", "");
+        setFormError("number","");
+
+        state.inputCep.focus();//o cursor sera jogado para dentro desse input
+
+    }
 
 
     function setFormError(key,value){
