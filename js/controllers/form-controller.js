@@ -1,8 +1,12 @@
+
+//O controlador trata iteraçoes do usuario
 import Address from '../models/address.js'
+import * as addressService from "../services/address-service.js";
+
 
 function State(){
 
-    this.Address = new Address();
+    this.address = new Address();
 
     this.btnSave = null
     this.btnClear = null
@@ -34,12 +38,28 @@ export function init(){
     state.errorNumber = document.querySelector('[data-error="numnber"]')
 
     state.inputNumber.addEventListener('change', handleInputNumberChange)
+    state.btnClear.addEventListener('click', handleBtnClearClick)
+    state.btnSave.addEventListener('click', handleBtnSaveClick);
+    state.inputCep.addEventListener('change',handleInputCepChange);
 
-    state.btnClear.addEventListener('click',clearForm)
+    
 
 }//fim init
 
+    async function handleInputCepChange(event){
+        const cep = event.target.value;
+        const address = await addressService.findByCep(cep);
+
+        console.log(address)
+    }
     
+
+    async function handleBtnSaveClick(event){
+        event.preventDefault();
+        console.log(event.target)
+    }
+
+       
 
     function handleInputNumberChange(event){
         if(event.target.value == ""){
@@ -49,14 +69,14 @@ export function init(){
 
     }
     }//fim funcao  handleInputNumberChange
-    
+
     function handleBtnClearClick(event){
         event.preventDefault();//para barrar o evio do formulario
         clearForm();
     }
 
-    //funcao para limpar o formulario
-    function clearForm(){
+     //funcao para limpar o formulario
+     function clearForm(){
         state.inputCep.value = "";
         state.inputCity.value = "";
         state.inputNumber.value = "";
