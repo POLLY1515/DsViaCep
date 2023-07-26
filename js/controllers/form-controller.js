@@ -48,9 +48,25 @@ export function init(){
 
     async function handleInputCepChange(event){
         const cep = event.target.value;
-        const address = await addressService.findByCep(cep);
 
-        console.log(address)
+        try{
+            const address = await addressService.findByCep(cep);
+
+            state.inputStreet.value = address.street;
+            state.inputCity.value = address.city;
+            state.address = address;
+    
+            setFormError("cep","");
+            state.inputNumber.focus();
+        }
+        catch(e){
+            state.inputStreet.value = "";
+            state.inputCity.value = "";
+            setFormError("cep","Informe um cep válido")
+        }
+        
+      
+
     }
     
 
