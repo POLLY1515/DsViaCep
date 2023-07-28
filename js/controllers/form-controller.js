@@ -2,6 +2,7 @@
 //O controlador trata iteraçoes do usuario
 import Address from '../models/address.js'
 import * as addressService from "../services/address-service.js";
+import * as listController from './list-controlelr.js'
 
 
 function State(){
@@ -77,7 +78,7 @@ export function init(){
 
     async function handleBtnSaveClick(event){
         event.preventDefault();
-        console.log(state.address)
+        listController.addCard(state.address);
     }
 
        
