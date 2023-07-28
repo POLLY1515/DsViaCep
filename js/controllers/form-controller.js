@@ -72,13 +72,26 @@ export function init(){
         }
         
       
-
     }
     
 
     async function handleBtnSaveClick(event){
         event.preventDefault();
-        listController.addCard(state.address);
+
+        const erros = addressService.getErrors(state.address);
+
+        const keys = Object.keys(erros);
+        if(keys.length > 0){
+            keys.forEach(key =>{
+                setFormError(key, erros[key]);
+            });
+        }
+            else{
+                listController.addCard(state.address);
+                 clearForm();
+            }
+        
+        
     }
 
        
@@ -106,6 +119,8 @@ export function init(){
 
         setFormError("cep", "");
         setFormError("number","");
+
+        state.address = new Address();
 
         state.inputCep.focus();//o cursor sera jogado para dentro desse input
 
