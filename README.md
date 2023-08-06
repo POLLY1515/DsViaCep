@@ -8,7 +8,7 @@ O usuário,após colocar o CEP no campo específico, os campos logradouro e cida
 automaticamente,restando então ao usuário, preencher o campo número solicitado.
 Após todos os campos preenchidos,o usuário pode salvar o CEP cadastrado, ou limpar os campos.
 
-<img ">
+<img src="https://github.com/POLLY1515/DsViaCep/blob/main/imagens/Captura%20de%20Tela%20(67).png">
 
 ### Tecnologias utilizadas no projeto
 
